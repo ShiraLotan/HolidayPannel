@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Register from './comps/Register';
+import Adminpannel from './comps/Adminpannel';
 import Login from './comps/Login';
 import {
   BrowserRouter as Router,
@@ -19,9 +20,9 @@ class App extends Component {
 
       <Route exact path="/"  render={()=><Register/>} />
       <Route   path="/login"  render={()=><Login/>} />
+      <Route exact path="/Adminpannel"  render={()=><Adminpannel/>} />
+      <Adminpannel/>
 
-
-        
       </div>
       </Router>
     );

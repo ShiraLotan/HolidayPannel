@@ -1,7 +1,19 @@
 import React, { Component } from 'react';
+import { connect } from "react-redux";
+import {LoadVacation} from "../state/action"
+import {Redirect} from "react-router-dom";
+import Adminpannel from './Adminpannel';
+
 
 
 class Login extends Component {
+
+// componentDidMount(){
+//   this.props.loadvacation()
+
+// }
+
+
   render() {
     return (
       <div className="Login">
@@ -32,9 +44,35 @@ class Login extends Component {
     }).then(r=>r.json())
     .then(data=>
       {
+        // console.log(data.resualt)
         alert(data.msg)
+
+        if(data.resualt.length>0)
+        {
+
+          this.props.loadvacation()
+        }
       })
   }
 }
 
-export default Login;
+
+
+
+
+const mapDispatchToProps = dispatch => {  
+
+  return  {
+    
+    loadvacation: function(){ 
+      
+      return dispatch(LoadVacation())
+
+  }
+  } 
+
+  }; 
+
+const login = connect(null, mapDispatchToProps)(Login);
+
+export default login;
