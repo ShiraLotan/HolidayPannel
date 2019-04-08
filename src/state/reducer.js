@@ -1,10 +1,10 @@
 const initialState = {
-    vacations: []
+    vacation: []
 };
  
 const reducer = (state = initialState, action) => {
-    let newState = {};
 
+    let newState = {};
     switch (action.type) {
         
         

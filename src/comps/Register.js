@@ -6,13 +6,15 @@ class Register extends Component {
     return (
       <div className="Register">
         <h1>Register</h1>
-        <input name="firstname" placeholder="Name" onChange={this.handeltext.bind(this)}/><br/><br/>
-        <input name="lastname" placeholder="Last Name" onChange={this.handeltext.bind(this)}/><br/><br/>
-        <input name="username" placeholder="Username" onChange={this.handeltext.bind(this)}/><br/><br/>
-        <input name="password" placeholder="Password" onChange={this.handeltext.bind(this)}/><br/><br/>
+        <input required name="firstname" placeholder="Name" onChange={this.handeltext.bind(this)}/><br/><br/>
+        <input required name="lastname" placeholder="Last Name" onChange={this.handeltext.bind(this)}/><br/><br/>
+        <input required name="username" placeholder="Username" onChange={this.handeltext.bind(this)}/><br/><br/>
+        <input required max="8" min="3" name="password" placeholder="Password" onChange={this.handeltext.bind(this)}/><br/><br/>
 
         <button onClick={this.sendData.bind(this)}>Register</button>
 
+
+          
       </div>
     );
   }

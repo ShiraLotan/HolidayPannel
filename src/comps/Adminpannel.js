@@ -2,19 +2,50 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 
 class Adminpannel extends Component {
+
+
+
   render() {
-   return(
-    <div className="Adminpannel">
-    <h1>Hello</h1>
+
+    console.log(this.props.vacation)
     
-      
+
+   return(
+     
+    <div className="Adminpannel">
+    <h1>Hello Admin</h1>
+    <button onClick={this.addvacation.bind(this)}>Add Vacation</button>
+   {this.props.vacation.map(v=>{
+   return  <div className="card"  key={v.id}><h1>{v.Destination}</h1><h4>{v.Description}</h4><h5>Dates:{v.Dates} Price:{v.Price}</h5><h6>Followers: {v.Followers}</h6><button onClick={this.deletevacation.bind(this)}>Remove</button></div>})}
     </div>
    )
   }
+
+  
+  addvacation(){
+    {this.props.history.push('/add')}
+  }
+
+
+  deletevacation(){
+    fetch(`http://localhost:3000/admin`, {
+  method: 'DELETE',
+  headers: {'Content-Type': 'application/json'}
+})
+.then(res => res.json()) 
+.then(res => {
+
+})
+  }
+
+
+
 }
-const mapStateToProps = state => { 
+const mapStateToProps = state => {
   return { vacation: state.vacation  };
 }; 
+
 const adminpannel = connect(mapStateToProps, null)(Adminpannel);
+
 
 export default adminpannel;

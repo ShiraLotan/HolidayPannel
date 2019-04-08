@@ -1,17 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import {LoadVacation} from "../state/action"
-import {Redirect} from "react-router-dom";
-import Adminpannel from './Adminpannel';
+
 
 
 
 class Login extends Component {
 
-// componentDidMount(){
-//   this.props.loadvacation()
 
-// }
 
 
   render() {
@@ -19,11 +15,10 @@ class Login extends Component {
       <div className="Login">
         <h1>Login</h1>
 
-       Username: <input name="loginusername" placeholder="Username" onChange={this.handeltext.bind(this)}/><br/><br/>
-       Password: <input name="loginpassword" placeholder="Password" onChange={this.handeltext.bind(this)}/><br/><br/>
+       Username: <input required name="loginusername" placeholder="Username" onChange={this.handeltext.bind(this)}/><br/><br/>
+       Password: <input required name="loginpassword" placeholder="Password" onChange={this.handeltext.bind(this)}/><br/><br/>
 
        <button onClick={this.sendData.bind(this)}>Login</button>
-
       </div>
     );
   }
@@ -46,11 +41,19 @@ class Login extends Component {
       {
         // console.log(data.resualt)
         alert(data.msg)
-
+        debugger;
         if(data.resualt.length>0)
         {
+          console.log(data.resualt[0].Name)
+          if(data.resualt[0].Name=='admin'){
+            this.props.loadvacation()
+          this.props.history.push('/Adminpannel')
+          }else{
+            this.props.loadvacation()
+          this.props.history.push('/User')
+          }
 
-          this.props.loadvacation()
+          
         }
       })
   }
