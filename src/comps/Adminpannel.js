@@ -14,9 +14,9 @@ class Adminpannel extends Component {
      
     <div className="Adminpannel">
     <h1>Hello Admin</h1>
-    <button onClick={this.addvacation.bind(this)}>Add Vacation</button>
+    <button className="btn btn-outline-dark btnpossion" onClick={this.addvacation.bind(this)}>Add Vacation</button>
    {this.props.vacation.map(v=>{
-   return  <div className="card"  key={v.id}><h1>{v.Destination}</h1><h4>{v.Description}</h4><h5>Dates:{v.Dates} Price:{v.Price}</h5><h6>Followers: {v.Followers}</h6><button onClick={this.deletevacation.bind(this)}>Remove</button></div>})}
+   return  <div className="card bg-dark text-white cardextra"  key={v.id}><h1 className="card-title">{v.Destination}</h1><h4 className="card-content">{v.Description}</h4><h5>Dates:{v.Dates} Price:{v.Price}</h5><h6>Followers: {v.Followers}</h6><button className="btn btn-outline-dark" onClick={this.deletevacation.bind(this)}>Remove</button></div>})}
     </div>
    )
   }

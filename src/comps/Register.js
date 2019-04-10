@@ -11,7 +11,7 @@ class Register extends Component {
         <input required name="username" placeholder="Username" onChange={this.handeltext.bind(this)}/><br/><br/>
         <input required max="8" min="3" name="password" placeholder="Password" onChange={this.handeltext.bind(this)}/><br/><br/>
 
-        <button onClick={this.sendData.bind(this)}>Register</button>
+        <button className="btn btn-outline-dark" onClick={this.sendData.bind(this)}>Register</button>
 
 
           

@@ -18,7 +18,7 @@ class Login extends Component {
        Username: <input required name="loginusername" placeholder="Username" onChange={this.handeltext.bind(this)}/><br/><br/>
        Password: <input required name="loginpassword" placeholder="Password" onChange={this.handeltext.bind(this)}/><br/><br/>
 
-       <button onClick={this.sendData.bind(this)}>Login</button>
+       <button className="btn btn-outline-dark" onClick={this.sendData.bind(this)}>Login</button>
       </div>
     );
   }

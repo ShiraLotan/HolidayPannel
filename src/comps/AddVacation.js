@@ -29,13 +29,13 @@ onDrop(picture) {
     Dates: <input name="dates" onChange={this.handeltxt.bind(this)}/><br/><br/>
     Price:<input name="price" onChange={this.handeltxt.bind(this)}/><br/><br/>
     
-    {/* <ImageUploader
+              <ImageUploader
                 withIcon={true}
-                buttonText='Choose images'
+               buttonText='Choose images'
                 onChange={this.onDrop}
                 imgExtension={['.jpg', '.gif', '.png', '.gif']}
                 maxFileSize={5242880}
-            /> */}
+           /> 
 
 
     <button onClick={this.sendData.bind(this)}>ADD</button>

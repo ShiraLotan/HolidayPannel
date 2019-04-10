@@ -12,12 +12,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-.vacation-Card
+.cardextra
 {
-  float: left;
-  margin: 48px;
   display: inline-block;
-  border: 2px solid black;
-  padding: 10px;
-
+  width:300px;
+  top: 100px;
+  margin:15px;
+}
+.btnpossion{
+  position: fixed;
 }
