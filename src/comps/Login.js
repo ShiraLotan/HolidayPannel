@@ -45,7 +45,7 @@ class Login extends Component {
         if(data.resualt.length>0)
         {
           console.log(data.resualt[0].Name)
-          if(data.resualt[0].Name=='admin'){
+          if(data.resualt[0].Name==='admin'){
             this.props.loadvacation()
           this.props.history.push('/Adminpannel')
           }else{

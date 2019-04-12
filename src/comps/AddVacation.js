@@ -1,20 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import {LoadVacation} from "../state/action"
-import ImageUploader from 'react-images-upload';
 
 class AddVacation extends Component {
 
-  constructor(props) {
-    super(props);
-     this.state = { pictures: [] };
-     this.onDrop = this.onDrop.bind(this);
-}
-
-onDrop(picture) {
-    this.setState({
-        pictures: this.state.pictures.concat(picture),
-    })}
+ 
 
   render() {
 
@@ -24,25 +14,35 @@ onDrop(picture) {
     <div className="AddVacation">
     <h1>Add Vacation</h1><br/><br/>
 
+
     Destination:<input name="destination" onChange={this.handeltxt.bind(this)}/><br/><br/>
     Description:<input name="description" onChange={this.handeltxt.bind(this)}/><br/><br/>
     Dates: <input name="dates" onChange={this.handeltxt.bind(this)}/><br/><br/>
     Price:<input name="price" onChange={this.handeltxt.bind(this)}/><br/><br/>
+    Image:   <input type="file" name="image"  id="imgUpload" onChange={this.handelimg.bind(this)}/>
     
-              <ImageUploader
-                withIcon={true}
-               buttonText='Choose images'
-                onChange={this.onDrop}
-                imgExtension={['.jpg', '.gif', '.png', '.gif']}
-                maxFileSize={5242880}
-           /> 
-
 
     <button onClick={this.sendData.bind(this)}>ADD</button>
+
+              
+
+
 
 
     </div>
    )
+  }
+  handelimg(ev)
+  {
+    var file = ev.target.files[0];
+    var reader = new FileReader();
+    reader.onload = (e) =>{
+
+      this.setState({image:e.target.result})
+
+    };
+  
+    reader.readAsText(file);
   }
 
   handeltxt(ev)

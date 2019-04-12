@@ -38,8 +38,8 @@ class App extends Component {
           <Switch>
               <Route exact path="/"  render={()=><Register/>} />
               <Route   path="/login"  render={(props)=><Login location={props.location} {...props}/>} />
-              <Route exact path="/Adminpannel"  render={(props)=><Adminpannel location={props.location} {...props}/>} />
-              <Route exact path="/User"  render={()=><User />} />
+              <Route exact path="/Adminpannel"  render={(props)=><Adminpannel refresh={this.refresh.bind(this)} location={props.location} {...props}/>} />
+              <Route exact path="/User"  render={()=><User refresh={this.refresh.bind(this)}/>} />
               <Route exact path="/add"  render={(props)=><AddVacation refresh={this.refresh.bind(this)} location={props.location} {...props}/>} />
 
 
